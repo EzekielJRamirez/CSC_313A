@@ -1,3 +1,6 @@
+NOTE this is actually for CSC 312B Algorithms Spring 2022
+with Prof Sanders
+
 git add --all
 git commit -m “Adding all files”
 git push
