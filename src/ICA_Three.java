@@ -66,14 +66,14 @@ public class ICA_Three {
         booler[5] = 0;
         booler[6] = 0;
         booler[7] = 0;
-        for (int i = 0; i < 16; i++) {
-            incrementRight(booler);
-            // increment binary values from right to left
-            System.out.println(Arrays.toString(booler));
-        }
-//        incAllRight(8);
-        //increment from 0 to user generated max amount of binary values
+//        for (int i = 0; i < 16; i++) {
+//            incrementRight(booler);
+//            // increment binary values from right to left
+//            System.out.println(Arrays.toString(booler));
+//        }
+        incAllRight(8);
+//        increment from 0 to user generated max amount of binary values
 //        increment(booler);
-//        System.out.println(Arrays.toString(booler));
+        System.out.println(Arrays.toString(booler));
     }
 }
