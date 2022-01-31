@@ -1,3 +1,2 @@
-# CSC_313A
-# CSC_313A
-# CSC_313A
+# CSC_312B
+* note with asterisk
