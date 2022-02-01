@@ -1,3 +1,6 @@
+//import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * space
  * time
@@ -47,7 +50,7 @@ public class ICA_Five {
             }
         }
 
-        // psuedocode says rightSum should equal neg infinity
+        // psuedocode says rightSum should equal negative infinity
         int rightSum = -100;
         sum = 0;
 
@@ -63,6 +66,22 @@ public class ICA_Five {
     }
 
     public static void main(String[] args) {
-        System.out.println("hi");
+//        System.out.println("hi");
+        int[] v = new int[10];
+        v[0] = 2;
+        v[1] = 10;
+        v[2] = 6;
+        v[3] = 28;
+        v[4] = 10;
+        v[5] = 22;
+        v[6] = 14;
+        v[7] = 26;
+        v[8] = 18;
+        v[9] = 20;
+
+        System.out.println(Arrays.toString(v));
+        findMaximumSubarray(v, 2, 2);
+//        System.out.println(findMaximumSubarray(v,2,2));
+        System.out.println(Arrays.toString(v));
     }
 }
