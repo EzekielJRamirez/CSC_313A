@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Collections;
 
 /**
  * space = linear O( )
@@ -17,7 +16,7 @@ import java.util.Collections;
  * we are welcome to perform a constant improvement
  */
 
-public class ICA_4 {
+public class ICA_Four {
     public static void main(String[] args) {
         int[] randy = new int[10];
         randy[0] = 2;
