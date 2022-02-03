@@ -17,8 +17,9 @@ public class ICA_Seven {
         numbers[10] = 13;
         numbers[11] = 30;
         System.out.println(Arrays.toString(numbers));
+        RecursiveBubbleSort(numbers, 0, numbers.length);
         numbers = bubbleSort(numbers);
-        System.out.println(Arrays.toString(numbers));
+//        System.out.println(Arrays.toString(numbers));
     }
 
     public static int[] bubbleSort(int[] sortMe) {
@@ -36,5 +37,27 @@ public class ICA_Seven {
             }
         }
         return sortMe;
+    }
+
+    //optimized solution
+    public static void RecursiveBubbleSort(int[] sortMe, int start, int size) {
+        // Marcus Mclatchy gave me some insight here
+//        System.out.println(Arrays.toString(sortMe));
+//        System.out.println(start);
+//        System.out.println(size);
+
+        if (sortMe[size - 1]  < sortMe[size - 2]) {
+            int temp = sortMe[size - 1];
+            sortMe[size - 1] = sortMe[size - 2];
+            sortMe[size - 2] = temp;
+        }
+
+        // start and size replace the for loops from original bubble sort
+        if (start > size) {
+            RecursiveBubbleSort(sortMe, start + 1, sortMe.length);
+        } else {
+            RecursiveBubbleSort(sortMe, start, size - 1);
+        }
+
     }
 }
