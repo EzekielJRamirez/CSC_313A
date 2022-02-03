@@ -1,4 +1,8 @@
 This page is to give more information on each assignment
+
+generate random numbers from 0 to max
+        Random r = new Random();
+        int val = r.nextInt(max);
 ICA
 2.
 

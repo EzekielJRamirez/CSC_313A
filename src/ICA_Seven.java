@@ -1,25 +1,25 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class ICA_Seven {
 
     public static void main(String[] args) {
-        int[] numbers = new int[12];
-        numbers[0] = 9;
-        numbers[1] = 5;
-        numbers[2] = 7;
-        numbers[3] = 10;
-        numbers[4] = 3;
-        numbers[5] = 15;
-        numbers[6] = 1;
-        numbers[7] = 20;
-        numbers[8] = 11;
-        numbers[9] = 25;
-        numbers[10] = 13;
-        numbers[11] = 30;
+        Random r = new Random();
+        int[] numbers = new int[20];
+        for ( int i = 0; i < numbers.length - 1; i++) {
+            numbers[i] = r.nextInt(29) + 1;
+        }
+
+        int[] ex2 = numbers;
+        int[] ex3 = numbers;
+
         System.out.println(Arrays.toString(numbers));
-        RecursiveBubbleSort(numbers, 0, numbers.length);
+        recSort(numbers, 0, numbers.length);
         numbers = bubbleSort(numbers);
-//        System.out.println(Arrays.toString(numbers));
+        ex3 = RecursiveBubbleSort(ex3, 0, ex3.length - 1);
+        System.out.println(Arrays.toString(ex3));
+//        ex2 = recSort(ex2, 0, ex2.length - 1);
+//        System.out.println(Arrays.toString(ex2));
     }
 
     public static int[] bubbleSort(int[] sortMe) {
@@ -40,24 +40,34 @@ public class ICA_Seven {
     }
 
     //optimized solution
-    public static void RecursiveBubbleSort(int[] sortMe, int start, int size) {
-        // Marcus Mclatchy gave me some insight here
-//        System.out.println(Arrays.toString(sortMe));
-//        System.out.println(start);
-//        System.out.println(size);
-
-        if (sortMe[size - 1]  < sortMe[size - 2]) {
-            int temp = sortMe[size - 1];
-            sortMe[size - 1] = sortMe[size - 2];
-            sortMe[size - 2] = temp;
+    public static int[] RecursiveBubbleSort(int[] sortMe, int start, int size) {
+        if (sortMe[size] < sortMe[size - 1]) {
+            int temp = sortMe[size];
+            sortMe[size] = sortMe[size - 1];
+            sortMe[size - 1] = temp;
         }
-
-        // start and size replace the for loops from original bubble sort
-        if (start > size) {
-            RecursiveBubbleSort(sortMe, start + 1, sortMe.length);
-        } else {
+        if (start < sortMe.length) {
+            RecursiveBubbleSort(sortMe, start + 1, size);
+        } else if (size > start) {
             RecursiveBubbleSort(sortMe, start, size - 1);
         }
 
+        return sortMe;
+    }
+
+    // here is the intermediate step to removing both for loops
+    public static int[] recSort(int[] sortMe, int start, int size) {
+        for (int j = sortMe.length - 1; j > 1; j--) {
+            if (sortMe[j] < sortMe[j - 1]) {
+                int temp = sortMe[j];
+                sortMe[j] = sortMe[j - 1];
+                sortMe[j - 1] = temp;
+            }
+        }
+        if (start < sortMe.length) {
+            recSort(sortMe, start + 1, size);
+        }
+
+        return sortMe;
     }
 }
