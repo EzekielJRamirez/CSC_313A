@@ -2,6 +2,10 @@
 
 import java.util.Vector;
 
+/**
+ * change vector to array
+ */
+
 public class ICA_Six_Array {
     public static Vector<Vector<String>> b = new Vector<Vector<String>>();
     public static Vector<Vector<Integer>> c = new Vector<Vector<Integer>>();
