@@ -5,26 +5,20 @@ public class ICA_Seven {
 
     public static void main(String[] args) {
         Random r = new Random();
-        int[] numbers = new int[20];
-        for ( int i = 0; i < numbers.length - 1; i++) {
+        int[] numbers = new int[29];
+        for (int i = 0; i < numbers.length - 1; i++) {
             numbers[i] = r.nextInt(29) + 1;
         }
-
-        int[] ex2 = numbers;
-        int[] ex3 = numbers;
-
         System.out.println(Arrays.toString(numbers));
-        recSort(numbers, 0, numbers.length);
-        numbers = bubbleSort(numbers);
-        ex3 = RecursiveBubbleSort(ex3, 0, ex3.length - 1);
-        System.out.println(Arrays.toString(ex3));
-//        ex2 = recSort(ex2, 0, ex2.length - 1);
-//        System.out.println(Arrays.toString(ex2));
+//        numbers = bubbleSort(numbers);
+//        numbers = recSort(numbers, 0);
+        numbers = recBubSort(numbers, 0, numbers.length - 1);
+        System.out.println(Arrays.toString(numbers));
     }
 
     public static int[] bubbleSort(int[] sortMe) {
         for (int i = 0; i < sortMe.length; i++) {
-            // start begining of array
+            // start beginning of array
             for (int j = sortMe.length - 1; j > i; j--) {
                 // iterate from end to start of array
                 if (sortMe[j] < sortMe[j - 1]) {
@@ -39,25 +33,26 @@ public class ICA_Seven {
         return sortMe;
     }
 
-    //optimized solution
-    public static int[] RecursiveBubbleSort(int[] sortMe, int start, int size) {
+    //optimized solution, both loops are now recursive
+    public static int[] recBubSort(int[] sortMe, int start, int size) {
         if (sortMe[size] < sortMe[size - 1]) {
             int temp = sortMe[size];
             sortMe[size] = sortMe[size - 1];
             sortMe[size - 1] = temp;
         }
-        if (start < sortMe.length) {
-            RecursiveBubbleSort(sortMe, start + 1, size);
-        } else if (size > start) {
-            RecursiveBubbleSort(sortMe, start, size - 1);
+        // the size gets updated through recursion
+        if (start < size && size > 1) {
+            recBubSort(sortMe, start, size - 1);
         }
-
+        if (size > start) {
+            recBubSort(sortMe, start + 1, size);
+        }
         return sortMe;
     }
 
-    // here is the intermediate step to removing both for loops
-    public static int[] recSort(int[] sortMe, int start, int size) {
-        for (int j = sortMe.length - 1; j > 1; j--) {
+    // here is the intermediate step to remove the first loop
+    public static int[] recSort(int[] sortMe, int start) {
+        for (int j = sortMe.length - 1; j >= 1; j--) {
             if (sortMe[j] < sortMe[j - 1]) {
                 int temp = sortMe[j];
                 sortMe[j] = sortMe[j - 1];
@@ -65,9 +60,8 @@ public class ICA_Seven {
             }
         }
         if (start < sortMe.length) {
-            recSort(sortMe, start + 1, size);
+            recSort(sortMe, start + 1);
         }
-
         return sortMe;
     }
 }
