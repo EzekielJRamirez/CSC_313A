@@ -12,9 +12,9 @@ public class ICA_Six {
         int m = X.length();
         int n = Y.length();
 
-        b = new Vector<Vector<String>>();
-        c = new Vector<Vector<Integer>>();
-        for (int i = 1; i < m; i++) {
+//        b = new Vector<Vector<String>>();
+//        c = new Vector<Vector<Integer>>();
+        for (int i = 0; i < m; i++) {
             c.elementAt(i).set(0, 0);   //use this one
         }
         for (int j = 0; j < n; j++) {
@@ -28,6 +28,7 @@ public class ICA_Six {
                     // symbols can be written as words
                     c.elementAt(i).set(j, c.elementAt(i - 1).elementAt(j - 1) + 1);
                     b.elementAt(i).set(j, "up and to left");
+                    // my error comes from the folling else-if command
                 } else if (c.elementAt(i - 1).elementAt(j) >= c.elementAt(i).elementAt(j - 1)) {
                     c.elementAt(i).set(j, c.elementAt(i - 1).elementAt(j));
                     b.elementAt(i).set(j, "up");
@@ -43,7 +44,16 @@ public class ICA_Six {
     // space complexity is O(mn)
     // input m and n for the first call to this function.
     public static void print_lcs(Vector<Vector<String>> b, String X, Integer i, Integer j) {
-        // your code here
+        if (i == 0 || j == 0) {
+            return;
+        }
+        if (b.elementAt(i).elementAt(j) == "up and to left") {
+            print_lcs(b, X, i - 1, j - 1);
+        } else if (b.elementAt(i).elementAt(j) == "up") {
+            print_lcs(b, X, i - 1, j);
+        } else {
+            print_lcs(b, X, i, j - 1);
+        }
     }
 
     public static void main(String[] args) {
