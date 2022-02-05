@@ -5,14 +5,15 @@ public class ICA_Seven {
 
     public static void main(String[] args) {
         Random r = new Random();
-        int[] numbers = new int[29];
+        int[] numbers = new int[15];
         for (int i = 0; i < numbers.length - 1; i++) {
             numbers[i] = r.nextInt(29) + 1;
         }
         System.out.println(Arrays.toString(numbers));
 //        numbers = bubbleSort(numbers);
-//        numbers = recSort(numbers, 0);
-        numbers = recBubSort(numbers, 0, numbers.length - 1);
+        // line 15 provides a space optimization of O[n * log(n)]
+        numbers = recSort(numbers, 0);
+//        numbers = recBubSort(numbers, 0, numbers.length - 1);
         System.out.println(Arrays.toString(numbers));
     }
 
@@ -44,6 +45,7 @@ public class ICA_Seven {
         if (start < size && size > 1) {
             recBubSort(sortMe, start, size - 1);
         }
+//        size = sortMe.length - 1;
         if (size > start) {
             recBubSort(sortMe, start + 1, size);
         }
