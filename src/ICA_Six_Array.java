@@ -20,10 +20,6 @@ public class ICA_Six_Array {
         c = new Vector<Vector<Integer>>();
         for (int i = 1; i < m; i++) {
             c.elementAt(i).set(0, 0);   //use this one
-//            c.set(c.elementAt(i).elementAt(0), 0);
-//            c[i, 0] = 0;
-//            vector[0] = 4;
-//            vector.set(0, 4);
         }
         for (int j = 0; j < n; j++) {
 //            c[0, j] = 0;
