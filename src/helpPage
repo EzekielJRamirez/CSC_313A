@@ -3,6 +3,19 @@ This page is to give more information on each assignment
 generate random numbers from 0 to max
         Random r = new Random();
         int val = r.nextInt(max);
+
+Approved Libraries
+/**
+ * 1. java.lang.System
+ * 2. java.lang.InterruptedException
+ * 3. java.util.ArrayList
+ * 4. java.util.concurrentTimeUnit
+ * 5. java.util.PriorityQueue
+ * 6. java.util.Random
+ * 7. java.util.Vector
+ * 8. javafx.util.Pair
+ */
+
 ICA
 2.
 
