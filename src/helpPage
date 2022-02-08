@@ -16,6 +16,29 @@ Approved Libraries
  * 8. javafx.util.Pair
  */
 
+Complexities
+1. Constant: O(1)
+    time:
+    space:
+2. Logarithmic: O(log(n))
+    time:
+    space:
+3. Linear: O(n)
+    time:
+    space:
+4. Greater than Linear, less than polynomial: O(n * log(n))
+    time:
+    space:
+5. Polynomial: O(n^c)
+    time:
+    space:
+6. Exponential: O(c^n)
+    time:
+    space:
+7. Factorial: O(n!)
+    time:
+    space:
+
 ICA
 2.
 

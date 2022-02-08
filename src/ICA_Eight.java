@@ -5,20 +5,9 @@ public class ICA_Eight {
     /**
      * time O(n^2)
      * space O(n)
+     *
+     * check optimization on page 179 - 184 or 151 - 160
      */
-
-    public static void main(String[] args) {
-        Vector<Integer> myData = new Vector<Integer>();
-        Random r = new Random();
-
-        for (int i = 0; i < 12; i++) {
-            myData.addElement(r.nextInt(30));
-        }
-
-        System.out.println(myData);
-        insertSort(myData);
-        System.out.println(myData);
-    }
 
     public static void insertSort(Vector<Integer> sortData) {
         for (Integer j = 1; j < sortData.size(); j++) {
@@ -31,5 +20,18 @@ public class ICA_Eight {
             }
             sortData.set(i + 1, key);
         }
+    }
+
+    public static void main(String[] args) {
+        Vector<Integer> myData = new Vector<Integer>();
+        Random r = new Random();
+
+        for (int i = 0; i < 12; i++) {
+            myData.addElement(r.nextInt(30));
+        }
+
+        System.out.println(myData);
+        insertSort(myData);
+        System.out.println(myData);
     }
 }
