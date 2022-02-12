@@ -23,7 +23,7 @@ public class ICA_Eight {
     }
 
     /**
-     * time: polynomial - O(n * log(n))
+     * time: less than polynomial - O(n * log(n))
      */
     public static void recInsertSort(Vector<Integer> sortData, Integer jay) {
         Integer key = sortData.elementAt(jay);
@@ -45,10 +45,10 @@ public class ICA_Eight {
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<Integer>();
         Random r = new Random();
-        int size = r.nextInt(5) + 15;
+        int size = r.nextInt(5) + 10;
 
         for (int i = 0; i < size; i++) {
-            myData.addElement(r.nextInt(30));
+            myData.addElement(r.nextInt(35));
         }
 
         System.out.println(myData);
