@@ -18,11 +18,17 @@ Approved Libraries
 
 Complexities
 1. Constant: O(1)
-    time:
-    space:
+    time:compute answer with closed form equation.
+
+    space:you have a set of variables, all declared at the start of program
+    ready to store values and be used in calculations
+
 2. Logarithmic: O(log(n))
-    time:
-    space:
+    time:at each step, check only half of remaining data
+
+    space:you only need to store a subset of data. You capture this data
+    in progressively halved quantities
+
 3. Linear: O(n)
     time:
     space:

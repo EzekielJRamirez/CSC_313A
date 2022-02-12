@@ -45,7 +45,7 @@ public class ICA_Eight {
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<Integer>();
         Random r = new Random();
-        int size = r.nextInt(10) + 5;
+        int size = r.nextInt(5) + 15;
 
         for (int i = 0; i < size; i++) {
             myData.addElement(r.nextInt(30));
