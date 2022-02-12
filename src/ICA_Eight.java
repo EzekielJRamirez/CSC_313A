@@ -23,7 +23,7 @@ public class ICA_Eight {
     }
 
     /**
-     * time: less than polynomial - O(n * log(n))
+     * space: less than polynomial - O(n * log(n))
      */
     public static void recInsertSort(Vector<Integer> sortData, Integer jay) {
         Integer key = sortData.elementAt(jay);
@@ -33,7 +33,6 @@ public class ICA_Eight {
             i = i - 1;
         }
         sortData.set(i + 1, key);
-
         // the jay should not be checking for data after the end of the vector
         // so jay must be < size - 1
         if (jay < sortData.size() - 1) {
