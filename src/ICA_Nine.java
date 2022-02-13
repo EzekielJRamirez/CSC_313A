@@ -32,11 +32,11 @@ public class ICA_Nine {
         left.addElement(Integer.MAX_VALUE);
         right.addElement(Integer.MAX_VALUE);
 
-        int i = 1;
-        int j = 1;
+        int i = 0;
+        int j = 0;
 
-        for (int k = p; k < r; k++) {
-            if (left.elementAt(i) <= right.elementAt(i)) {
+        for (int k = p; k <= r; k++) {
+            if (left.elementAt(i) <= right.elementAt(j)) {
                 a.set(k, left.elementAt(i));
                 i = i + 1;
             } else {
@@ -48,25 +48,15 @@ public class ICA_Nine {
 
     public static void main(String[] args) {
         Vector<Integer> vInt = new Vector<Integer>();
-//        Random r = new Random();
-//        int size = r.nextInt(5) + 10;
-//
-//        for (int i = 0; i < size; i++) {
-//            vInt.addElement(r.nextInt(20));
-//        }
-        vInt.addElement(8);
-        vInt.addElement(0);
-        vInt.addElement(1);
-        vInt.addElement(9);
-        vInt.addElement(5);
-        vInt.addElement(9);
-        vInt.addElement(17);
-        vInt.addElement(19);
-        vInt.addElement(0);
+        Random r = new Random();
+        int size = r.nextInt(10) + 10;
 
-//        8, 0, 1, 9, 5, 9, 5, 17, 19, 0
+        for (int i = 0; i < size; i++) {
+            // the r.nextInt says generate a random number from 1 to vInt.size * 1.5
+            vInt.addElement(r.nextInt((int)(size * 1.5)) + 1);
+        }
         System.out.println(vInt);
-        mergeSort(vInt, 1, vInt.size());
+        mergeSort(vInt, 0, vInt.size() - 1);
         System.out.println(vInt);
     }
 }

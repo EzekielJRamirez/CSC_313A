@@ -5,8 +5,8 @@ generate random numbers from 0 to max
         int val = r.nextInt(max);
 
 shortcut commands
-shift + ctrl + f12  --> play main method in the program
-shift + f12         --> play the whole page including every class of the program
+shift + ctrl + f10  --> play main method in the program
+shift + f10         --> play the whole page including every class of the program
                         you are looking at. also plays main method too
 ctrl + alt + l      --> cleans the code to look nice
 alt + f12           --> open terminal

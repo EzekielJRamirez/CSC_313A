@@ -4,6 +4,12 @@ generate random numbers from 0 to max
         Random r = new Random();
         int val = r.nextInt(max);
 
+rounding, ceiling and floor
+    __   __
+    |     | ceiling rounding rounds up a value to next whole unit
+
+    |_ _| floor rounds number down to previous whole unit
+
 shortcut commands
 shift + ctrl + f10  --> play main method in the program
 shift + f10         --> play the whole page including every class of the program
