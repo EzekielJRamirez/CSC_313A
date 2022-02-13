@@ -61,11 +61,9 @@ public class ICA_Nine {
                 loop = loop * 2;
             }
         }
-        System.out.println("loop is = " + loop);
-        int temp = loop - lt.size();
-        System.out.println(temp);
-
         // this for loop would not work!!!
+        // this loop didn't work becuase I added to my list and that made increase which
+        // caused the for-loop reach the end condition earlier than expected
 //        for (int i = 0; i <= (loop - lt.size()); i++) {
 //            lt.add(null);
 //        }
@@ -120,11 +118,6 @@ public class ICA_Nine {
         lt.add(3);
         lt.add(9);
         lt.add(82);
-        lt.add(10);
-        lt.add(9);
-//        lt.add(82);
-        lt.add(10);
-        lt.add(10);
         lt.add(10);
 //        lt.add(null);
 //        for (int i = 0; i < size; i++) {
