@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Vector;
 
@@ -46,6 +47,58 @@ public class ICA_Nine {
         }
     }
 
+    /*
+        optimization here
+     */
+
+
+    public static void getPow(LinkedList<Integer> lt) {
+        int loop = 0;
+        if (lt.size() % 2 == 1) {
+            loop = 2;
+            while (loop < lt.size()) {
+                // multiply by 2 til we have 2^n
+                loop = loop * 2;
+            }
+        }
+        System.out.println("loop is = " + loop);
+        int temp = loop - lt.size();
+        System.out.println(temp);
+
+        // this for loop would not work!!!
+//        for (int i = 0; i <= (loop - lt.size()); i++) {
+//            lt.add(null);
+//        }
+        while (lt.size() < loop) {
+            lt.add(null);
+        }
+    }
+
+    public static void mergeLListSort(LinkedList<Integer> lt, Integer p, Integer r) {
+        if (p < r) {
+            Integer q = (p + r) / 2;
+            mergeLListSort(lt, p, q);
+            mergeLListSort(lt, q + 1, r);
+            mergeLList(lt, p, q, r);
+        }
+    }
+
+    public static void mergeLList(LinkedList<Integer> lt, Integer p, Integer q, Integer r) {
+        Integer i = p;
+        Integer j = i + 1;
+
+        for (int k = p; k <= r; k++) {
+            if(lt.get(i) <= lt.get(j)) {
+                i++;
+            } else if (lt.get(i) > lt.get(j)) {
+                Integer temp = lt.get(j);
+                lt.remove(j);
+                lt.add(k, temp);
+                j++;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Vector<Integer> vInt = new Vector<Integer>();
         Random r = new Random();
@@ -58,5 +111,31 @@ public class ICA_Nine {
         System.out.println(vInt);
         mergeSort(vInt, 0, vInt.size() - 1);
         System.out.println(vInt);
+
+        //linkedList opt here
+        LinkedList<Integer> lt = new LinkedList<>();
+        lt.add(38);
+        lt.add(27);
+        lt.add(43);
+        lt.add(3);
+        lt.add(9);
+        lt.add(82);
+        lt.add(10);
+        lt.add(9);
+//        lt.add(82);
+        lt.add(10);
+        lt.add(10);
+        lt.add(10);
+//        lt.add(null);
+//        for (int i = 0; i < size; i++) {
+//            // the r.nextInt says generate a random number from 1 to vInt.size * 1.5
+//            lt.add(r.nextInt(40));
+//        }
+        System.out.println("\n" + lt);
+//        mergeLListSort(lt, 0, lt.size() - 1);
+        System.out.println(lt.size());
+        getPow(lt);
+        System.out.println(lt);
+        System.out.println(lt.size());
     }
 }
