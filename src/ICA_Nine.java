@@ -87,6 +87,9 @@ public class ICA_Nine {
 
         for (int k = p; k <= r; k++) {
             if(lt.get(i) <= lt.get(j)) {
+                Integer temp = lt.get(i);
+                lt.remove(j);
+                lt.add(k,temp);
                 i++;
             } else if (lt.get(i) > lt.get(j)) {
                 Integer temp = lt.get(j);
@@ -124,11 +127,11 @@ public class ICA_Nine {
 //            // the r.nextInt says generate a random number from 1 to vInt.size * 1.5
 //            lt.add(r.nextInt(40));
 //        }
-        System.out.println("\n" + lt);
-//        mergeLListSort(lt, 0, lt.size() - 1);
-        System.out.println(lt.size());
+//        System.out.println(lt);
+//        System.out.println(lt.size());
         getPow(lt);
-        System.out.println(lt);
+        System.out.println("\n" + lt);
         System.out.println(lt.size());
+        mergeLListSort(lt, 0, lt.size() - 1);
     }
 }
