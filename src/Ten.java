@@ -1,6 +1,10 @@
 import java.util.Random;
 import java.util.Vector;
 
+/**
+ * look to future ica for optimization this time
+ */
+
 public class Ten {
 
     public static void heap_sort(Vector<Integer> input) {
@@ -11,7 +15,7 @@ public class Ten {
             input.set(0, input.elementAt(i));
             input.set(i, temp);
             heap_size = heap_size - 1;
-            max_heapify(input, 1);
+            max_heapify(input, 0);
         }
     }
 
@@ -44,7 +48,8 @@ public class Ten {
     }
 
     /**
-     * this method is not used anywhere else in the program
+     * this method is not used anywhere in the program according to psuedocode
+     * maybe it is useful in optimizing the code?
      */
     public static Integer parent(Integer i) {
         return i / 2; // use floor round if not returning proper value
@@ -60,13 +65,12 @@ public class Ten {
 
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
-        Integer vSize = 6;
+        Integer vSize = 15;
         Random r = new Random();
         for (int i = 0; i < vSize; i++) {
-            myData.addElement(r.nextInt(24) + 1);
+            myData.addElement(r.nextInt(99) + 1);
         }
 
-//        heap_size = myData.size() - 1;
         System.out.println(myData);
         heap_sort(myData);
         System.out.println(myData);
