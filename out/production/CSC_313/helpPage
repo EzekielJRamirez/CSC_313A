@@ -43,8 +43,10 @@ Complexities
     in progressively halved quantities
 
 3. Linear: O(n)
-    time:
-    space:
+    time:a loop that is only one level deep
+
+    space:you have a data structure that stores all your inputs to the program
+
 4. Greater than Linear, less than polynomial: O(n * log(n))
     time:
     space:
