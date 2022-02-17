@@ -51,7 +51,7 @@ public class Eleven {
 
     public static Integer randPartition(Vector<Integer> input, Integer p, Integer r) {
         Random rand = new Random();
-        //Random in the book refers a random value from input[p] to input[r]
+        // Random in the book refers a random value from input[p] to input[r]
         // basically the range of random values are input[p...r]
         Integer i = rand.nextInt(r - p) + p;
         //exchange
