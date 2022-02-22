@@ -42,7 +42,8 @@ public class Twelve {
         return partition(input, p, r);
     }
 
-    //todo begin optimization here, check tail recursive sort
+    // Sanders said it was easier to think of this opt in terms of space,
+    // but it also provides constant time improvement
     public static void tailRecSort(Vector<Integer> input, Integer p, Integer r) {
         Integer q;
         while (p < r) {
