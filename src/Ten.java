@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
@@ -92,6 +94,22 @@ public class Ten {
         }
     }
 
+    // this opt would be O(n) time improvement
+//    public static void bucketSort(Vector<Integer> input) {
+//        //let b[0...n-1] be a new array
+//        Vector<Integer> b = new Vector<>();
+//        List a1 = new ArrayList();
+//        int n = input.size() - 1;
+//        for (int i = 0; i < n; i ++) {
+//            // make b[i] an empty list
+//            b.addElement(a1);
+//
+//        }
+//        for (int i = 0; i < n; i++) {
+//
+//        }
+//    }
+
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
         Vector<Integer> sortMe = new Vector<>();
@@ -103,10 +121,10 @@ public class Ten {
 
         System.out.println("ICA " + 10);
         System.out.println(myData);
-//        heap_sort(myData);
-//        System.out.println("heapsort\n" + myData);
-        countingSort(myData, sortMe, myData.size());
-        System.out.println("countSort\n" + sortMe);
+        heap_sort(myData);
+        System.out.println("heapsort\n" + myData);
+//        countingSort(myData, sortMe, myData.size());
+//        System.out.println("countSort\n" + sortMe);
     }
 
     static Integer heap_size;

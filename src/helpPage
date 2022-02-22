@@ -8,7 +8,7 @@ rounding, ceiling and floor
     __   __
     |     | ceiling rounding rounds up a value to next whole unit
 
-    |_ _| floor rounds number down to previous whole unit
+    |__ __| floor rounds number down to previous whole unit
 
 shortcut commands
 shift + ctrl + f10  --> play main method in the program
@@ -33,12 +33,12 @@ Complexities
 1. Constant: O(1)
     TIME:compute answer with closed form equation.
     SPACE:you have a set of variables, all declared at the start of program
-    ready to store values and be used in calculations
+        ready to store values and be used in calculations
 
 2. Logarithmic: O(log(n))
     TIME:at each step, check only half of remaining data
     SPACE:you only need to store a subset of data. You capture this data
-    in progressively halved quantities
+        in progressively halved quantities
 
 3. Linear: O(n)
     TIME:a loop that is only one level deep
@@ -46,27 +46,27 @@ Complexities
 
 4. Greater than Linear, less than polynomial: O(n * log(n))
     TIME:recursively divide all data in half until it's completely separated,
-    then combine it all back together, element by element
+        then combine it all back together, element by element
     SPACE:you have the need to store the entire set of data, replicated in
-    halved quantities at each step, all at one time. You cannot delete the
-    data between steps.
+        halved quantities at each step, all at one time. You cannot delete the
+        data between steps.
 
 5. Polynomial: O(n^c)
     TIME:there exist c-nested loops
     SPACE:you have the need to compose the data into a data structure using
-    c loops, nested together
+        c loops, nested together
 
 6. Exponential: O(c^n)
     TIME:enumerate all possible outcomes, and search for the correct answer
     SPACE:you must maintain a data structure of all the possible outcomes
-    given a set of (n) input data points
+        given a set of (n) input data points
 
 7. Factorial: O(n!)
     TIME:shuffle a deck of cards, then check to see if it is sorted. Repeat
-    until sorted. This will finish in factorial time with respect to the
-    number of cards you have in your deck
+        until sorted. This will finish in factorial time with respect to the
+        number of cards you have in your deck
     SPACE:you desire to store every single instance of randomly shuffling a
-    deck until a sorted configuration is found
+        deck until a sorted configuration is found
 
 ICA NOTES
 9. Had help from CS

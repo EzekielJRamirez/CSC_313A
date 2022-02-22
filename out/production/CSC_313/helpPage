@@ -8,7 +8,7 @@ rounding, ceiling and floor
     __   __
     |     | ceiling rounding rounds up a value to next whole unit
 
-    |_ _| floor rounds number down to previous whole unit
+    |__ __| floor rounds number down to previous whole unit
 
 shortcut commands
 shift + ctrl + f10  --> play main method in the program
@@ -31,50 +31,42 @@ Approved Libraries
 
 Complexities
 1. Constant: O(1)
-    time:compute answer with closed form equation.
-
-    space:you have a set of variables, all declared at the start of program
-    ready to store values and be used in calculations
+    TIME:compute answer with closed form equation.
+    SPACE:you have a set of variables, all declared at the start of program
+        ready to store values and be used in calculations
 
 2. Logarithmic: O(log(n))
-    time:at each step, check only half of remaining data
-
-    space:you only need to store a subset of data. You capture this data
-    in progressively halved quantities
+    TIME:at each step, check only half of remaining data
+    SPACE:you only need to store a subset of data. You capture this data
+        in progressively halved quantities
 
 3. Linear: O(n)
-    time:a loop that is only one level deep
-
-    space:you have a data structure that stores all your inputs to the program
+    TIME:a loop that is only one level deep
+    SPACE:you have a data structure that stores all your inputs to the program
 
 4. Greater than Linear, less than polynomial: O(n * log(n))
-    time:
-    space:
+    TIME:recursively divide all data in half until it's completely separated,
+        then combine it all back together, element by element
+    SPACE:you have the need to store the entire set of data, replicated in
+        halved quantities at each step, all at one time. You cannot delete the
+        data between steps.
+
 5. Polynomial: O(n^c)
-    time:
-    space:
+    TIME:there exist c-nested loops
+    SPACE:you have the need to compose the data into a data structure using
+        c loops, nested together
+
 6. Exponential: O(c^n)
-    time:
-    space:
+    TIME:enumerate all possible outcomes, and search for the correct answer
+    SPACE:you must maintain a data structure of all the possible outcomes
+        given a set of (n) input data points
+
 7. Factorial: O(n!)
-    time:
-    space:
+    TIME:shuffle a deck of cards, then check to see if it is sorted. Repeat
+        until sorted. This will finish in factorial time with respect to the
+        number of cards you have in your deck
+    SPACE:you desire to store every single instance of randomly shuffling a
+        deck until a sorted configuration is found
 
-ICA
-2.
-
-3.
-
-4.
-
-5.
-
-6.
-
-7.
-
-8.
-
+ICA NOTES
 9. Had help from CS
-
-10.
