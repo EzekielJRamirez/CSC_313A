@@ -66,13 +66,36 @@ public class Ten {
     /**
      * optimization begins here
      */
-    public static void countingSort() {
-        //code here
+    public static void countingSort(Vector<Integer> input, Vector<Integer> beeput, int k) {
+        // let c[0 - k] be a new array
+        Vector<Integer> c = new Vector<>();
+        for (int i = 0; i < k; i++) {
+            c.addElement(i);
+            c.set(i, 0);
+            beeput.addElement(i);
+            beeput.set(i,0);
+        }
+        for (int j = 0; j < input.size(); j++) {
+//            c.set(j, input.elementAt(j) + 1);
+//            c.set(j , )
+            // c[i] now contains the number of elements equal to i
+        }
+        for (int i = 1; i < k; i++) {
+            c.set(i, c.elementAt(i) + c.elementAt(i - 1));
+            //c[i] now contains the number of elements less than or equal to i
+        }
+        for (int j = input.size() - 1; j >= 0; j--) {
+//            beeput.set(c.elementAt(input.elementAt(j)), input.elementAt(j));
+            beeput.set(j, input.elementAt(j));
+//            c.set(j, c.elementAt(input.elementAt(j)) - 1);
+            c.set(j, input.elementAt(j)  - 1);
+        }
     }
 
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
-        Integer vSize = 15;
+        Vector<Integer> sortMe = new Vector<>();
+        Integer vSize = 8;
         Random r = new Random();
         for (int i = 0; i < vSize; i++) {
             myData.addElement(r.nextInt(99) + 1);
@@ -80,8 +103,10 @@ public class Ten {
 
         System.out.println("ICA " + 10);
         System.out.println(myData);
-        heap_sort(myData);
-        System.out.println(myData);
+//        heap_sort(myData);
+//        System.out.println("heapsort\n" + myData);
+        countingSort(myData, sortMe, myData.size());
+        System.out.println("countSort\n" + sortMe);
     }
 
     static Integer heap_size;
