@@ -37,32 +37,28 @@ public class Thirteen {
      * TODO begin optimization here
      *  try bucket sort page 200 ICA 14
      *  or counting sort page 194-196 ICA 15
+     *  Sanders recommends random partition
      */
 
+    // this opt would be O(n) time improvement
     public static void countingSort(Vector<Integer> input, Vector<Integer> beeput, int k) {
-//        // let c[0 - k] be a new array
-//        Vector<Integer> c = new Vector<>();
-//        for (int i = 0; i < k; i++) {
-//            c.addElement(i);
-//            c.set(i, 0);
-//            beeput.addElement(i);
-//            beeput.set(i,0);
-//        }
-//        for (int j = 0; j < input.size(); j++) {
-////            c.set(j, input.elementAt(j) + 1);
-////            c.set(j , )
-//            // c[i] now contains the number of elements equal to i
-//        }
-//        for (int i = 1; i < k; i++) {
-//            c.set(i, c.elementAt(i) + c.elementAt(i - 1));
-//            //c[i] now contains the number of elements less than or equal to i
-//        }
-//        for (int j = input.size() - 1; j >= 0; j--) {
-////            beeput.set(c.elementAt(input.elementAt(j)), input.elementAt(j));
-//            beeput.set(j, input.elementAt(j));
-////            c.set(j, c.elementAt(input.elementAt(j)) - 1);
-//            c.set(j, input.elementAt(j)  - 1);
-//        }
+        // let c[0...k] be a new array
+        // k is equal to largest value in the array not the size of the array
+        Vector<Integer> c = new Vector<>();
+        for (int i = 0; i < k; i++) {
+            c.addElement(0);
+        }
+        for (int j = 0; j < input.size(); j++) {
+            // if c[j] and input[j] are same value then increment count of c[j]
+            c.set(input.elementAt(j), c.elementAt(input.elementAt(j)) + 1);
+        }
+        for (int i = 1; i < k; i ++) {
+            c.set(i, c.elementAt(i) + c.elementAt(i - 1));
+        }
+        for(int j = input.size() - 1; j >= 0; j--) {
+            beeput.set(c.elementAt(input.elementAt(j)) - 1, input.elementAt(j));
+            c.set(input.elementAt(j), c.elementAt(input.elementAt(j)) - 1);
+        }
     }
 
     // this opt would be O(n) time improvement
@@ -83,13 +79,21 @@ public class Thirteen {
 
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
+        Vector<Integer> bData = new Vector<>();
+        int temp = 0;
         Integer vSize = 15;
         Random r = new Random();
         for (int i = 0; i < vSize; i++) {
             myData.addElement(r.nextInt(100) + 1);
+            bData.addElement(myData.elementAt(i));
+            if (temp < myData.elementAt(i)) { // if temp is less than value of myData[i]
+                // record larger value
+                temp = myData.elementAt(i);
+            }
         }
+
         System.out.println("ICA 12\n" + myData);
-        tailRecSort(myData, 0, myData.size() - 1);
-        System.out.println("Tail Recursion sort\n" + myData);
+        countingSort(myData,bData, temp + 1);
+        System.out.println("bData\n" + bData);
     }
 }
