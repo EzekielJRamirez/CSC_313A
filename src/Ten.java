@@ -68,31 +68,31 @@ public class Ten {
     /**
      * optimization begins here
      */
-    public static void countingSort(Vector<Integer> input, Vector<Integer> beeput, int k) {
-        // let c[0 - k] be a new array
-        Vector<Integer> c = new Vector<>();
-        for (int i = 0; i < k; i++) {
-            c.addElement(i);
-            c.set(i, 0);
-            beeput.addElement(i);
-            beeput.set(i,0);
-        }
-        for (int j = 0; j < input.size(); j++) {
-//            c.set(j, input.elementAt(j) + 1);
-//            c.set(j , )
-            // c[i] now contains the number of elements equal to i
-        }
-        for (int i = 1; i < k; i++) {
-            c.set(i, c.elementAt(i) + c.elementAt(i - 1));
-            //c[i] now contains the number of elements less than or equal to i
-        }
-        for (int j = input.size() - 1; j >= 0; j--) {
-//            beeput.set(c.elementAt(input.elementAt(j)), input.elementAt(j));
-            beeput.set(j, input.elementAt(j));
-//            c.set(j, c.elementAt(input.elementAt(j)) - 1);
-            c.set(j, input.elementAt(j)  - 1);
-        }
-    }
+//    public static void countingSort(Vector<Integer> input, Vector<Integer> beeput, int k) {
+//        // let c[0 - k] be a new array
+//        Vector<Integer> c = new Vector<>();
+//        for (int i = 0; i < k; i++) {
+//            c.addElement(i);
+//            c.set(i, 0);
+//            beeput.addElement(i);
+//            beeput.set(i,0);
+//        }
+//        for (int j = 0; j < input.size(); j++) {
+////            c.set(j, input.elementAt(j) + 1);
+////            c.set(j , )
+//            // c[i] now contains the number of elements equal to i
+//        }
+//        for (int i = 1; i < k; i++) {
+//            c.set(i, c.elementAt(i) + c.elementAt(i - 1));
+//            //c[i] now contains the number of elements less than or equal to i
+//        }
+//        for (int j = input.size() - 1; j >= 0; j--) {
+////            beeput.set(c.elementAt(input.elementAt(j)), input.elementAt(j));
+//            beeput.set(j, input.elementAt(j));
+////            c.set(j, c.elementAt(input.elementAt(j)) - 1);
+//            c.set(j, input.elementAt(j)  - 1);
+//        }
+//    }
 
     // this opt would be O(n) time improvement
 //    public static void bucketSort(Vector<Integer> input) {
