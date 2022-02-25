@@ -92,8 +92,10 @@ public class Thirteen {
             }
         }
 
-        System.out.println("ICA 12\n" + myData);
+        System.out.println("ICA 13\n" + myData);
+//        tailRecSort(myData,0, myData.size() - 1);
+//        System.out.println("Tail Recursion Sort\n" + myData);
         countingSort(myData,bData, temp + 1);
-        System.out.println("bData\n" + bData);
+        System.out.println("Counting Sort\n" + bData);
     }
 }
