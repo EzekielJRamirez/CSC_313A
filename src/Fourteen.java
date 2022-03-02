@@ -11,20 +11,19 @@ public class Fourteen {
         Vector<Vector<Integer>> buck = new Vector<>(10);
         // input size should be 9 for int and 25 for alphabet
         Integer n = input.size();
-        for (int i = 0; i < n - 1; i++) {
+        System.out.println("input size: " + input.size());
+        for (int i = 0; i < n; i++) {
             //make B[i] an empty list or an empty vector
-//            buck.addElement(bee.addElement(0));
-//            bee.addElement(0);
             buck.addElement(new Vector<Integer>());
         }
 //        buck.addElement(bee);
-        for (int i = 1; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             //insert A[i] into list B[n * A[i]] with floor round
-//            buck.elementAt(bee.elementAt(i)).set(i,input.elementAt(i));
-            Vector<Integer> bee = buck.elementAt(i);
-//            bee
+            // dividing by 100 makes numbers any 2 digit number less than 1     78 --> .78
+            Integer temp = n * input.elementAt(i) / 100;
+            buck.elementAt((n * input.elementAt(i) / 100)).addElement(input.elementAt(i));
+            System.out.println(buck);
         }
-        System.out.println(buck);
     }
 
 //    public static void insertionSort() {
@@ -48,16 +47,22 @@ public class Fourteen {
         Vector<Integer> myData = new Vector<>();
 //        Vector<Integer> bData = new Vector<>();
 //        int temp = 0;
-        Integer vSize = 5;
-        Random r = new Random();
-        for (int i = 0; i < vSize; i++) {
-            myData.addElement(r.nextInt(100) + 1);
-//            bData.addElement(myData.elementAt(i));
-//            if (temp < myData.elementAt(i)) { // if temp is less than value of myData[i]
-//                // record larger value
-//                temp = myData.elementAt(i);
-//            }
-        }
+//        Integer vSize = 5;
+//        Random r = new Random();
+//        for (int i = 0; i < vSize; i++) {
+//            myData.addElement(r.nextInt(100) + 1);
+//        }
+
+        myData.addElement(78);
+        myData.addElement(17);
+        myData.addElement(39);
+        myData.addElement(26);
+        myData.addElement(72);
+        myData.addElement(94);
+        myData.addElement(21);
+        myData.addElement(12);
+        myData.addElement(23);
+        myData.addElement(68);
 
         System.out.println("ICA 13\n" + myData);
         bucketSort(myData);
