@@ -11,19 +11,24 @@ public class Fourteen {
         Vector<Vector<Integer>> buck = new Vector<>(10);
         // input size should be 9 for int and 25 for alphabet
         Integer n = input.size();
-        System.out.println("input size: " + input.size());
+//        System.out.println("input size: " + input.size());
+
         for (int i = 0; i < n; i++) {
             //make B[i] an empty list or an empty vector
             buck.addElement(new Vector<Integer>());
         }
-//        buck.addElement(bee);
         for (int i = 0; i < n; i++) {
             //insert A[i] into list B[n * A[i]] with floor round
             // dividing by 100 makes numbers any 2 digit number less than 1     78 --> .78
-            Integer temp = n * input.elementAt(i) / 100;
+//            Integer temp = n * input.elementAt(i) / 100;
             buck.elementAt((n * input.elementAt(i) / 100)).addElement(input.elementAt(i));
-            System.out.println(buck);
+//            System.out.println(buck);
         }
+        for (int i = 0; i < n; i++) {
+            insertSort(buck.elementAt(i));
+        }
+        System.out.println(buck);
+        //TODO concatenate the arrays in order
     }
 
 //    public static void insertionSort() {
@@ -50,9 +55,10 @@ public class Fourteen {
 //        Integer vSize = 5;
 //        Random r = new Random();
 //        for (int i = 0; i < vSize; i++) {
-//            myData.addElement(r.nextInt(100) + 1);
+//            myData.addElement(r.nextInt(99) + 1);
 //        }
 
+//        myData.addElement(8);
         myData.addElement(78);
         myData.addElement(17);
         myData.addElement(39);
