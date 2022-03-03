@@ -5,8 +5,9 @@ import java.util.Vector;
  * read page 194-196
  */
 
-// time
-// space
+// time:        O(n)
+// space:       O(n)
+// 2.5 is now extra credit
 public class Fifteen {
 
     public static void countingSort(Vector<Integer> input, Vector<Integer> beeput, int k) {
@@ -44,7 +45,7 @@ public class Fifteen {
             }
         }
 
-        System.out.println("ICA 13\n" + myData);
+        System.out.println("ICA 15\n" + myData);
         countingSort(myData,bData, temp + 1);
         System.out.println("Counting Sort\n" + bData);
     }

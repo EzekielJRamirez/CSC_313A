@@ -69,7 +69,7 @@ public class Fourteen {
 //        myData.addElement(23);
 //        myData.addElement(68);
 
-        System.out.println("ICA 13\n" + myData);
+        System.out.println("ICA 14\n" + myData);
         bucketSort(myData);
     }
 }
