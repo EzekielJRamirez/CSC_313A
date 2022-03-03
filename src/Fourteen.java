@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Random;
 import java.util.Vector;
 
@@ -27,13 +28,16 @@ public class Fourteen {
         for (int i = 0; i < n; i++) {
             insertSort(buck.elementAt(i));
         }
-//        System.out.println(buck);
         // next for loop is for debug purpose
         for(int i = 0; i < buck.size(); i++) {
-            System.out.println(buck.elementAt(i));
+            for(int j = 0; j < buck.elementAt(i).size(); j++) {
+                System.out.print(buck.elementAt(i).elementAt(j) + ", ");
+                // Sanders said this is fine
+            }
         }
-//        System.out.println(buck.elementAt(1));
         //TODO concatenate the arrays in order
+        // if I really want to return the final sorted array I
+        // could just make another auxiallary array and return that
     }
 
     public static void insertSort(Vector<Integer> input) {
@@ -51,7 +55,7 @@ public class Fourteen {
 
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
-        Integer vSize = 25;
+        Integer vSize = 20;
         Random r = new Random();
         for (int i = 0; i < vSize; i++) {
             myData.addElement(r.nextInt(99) + 1);
