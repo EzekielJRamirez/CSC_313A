@@ -124,3 +124,27 @@ ICA NOTES
             // concatenate
         }
     }
+
+14. more junk code from main
+        Vector<Integer> strData = new Vector<>();
+        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        System.out.println(str);
+        System.out.println(str.length());
+        // append to str using .concat()
+        str = str.concat("ABCDEF");
+        System.out.println(str);
+        System.out.println(str.length());
+        // ascii values a-z     97-122
+        // ascii values A-Z     65-90
+        str = str.concat(Character.toString((char) 65));
+        System.out.println(str);
+
+        for (int i = 0; i < 35; i++) {
+            strData.addElement(r.nextInt(26) + 65);
+        }
+
+        str = "";
+        for(int i = 0; i < strData.size(); i++){
+            str = str.concat(Character.toString((char) (int)strData.elementAt(i)));
+        }
+        System.out.println(str + "\nlength: " + str.length());

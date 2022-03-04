@@ -37,7 +37,6 @@ public class Fourteen {
                 // Sanders said this is fine
             }
         }
-        //TODO concatenate the arrays in order
         // if I really want to return the final sorted array I
         // could just make another auxillary array and return that
     }
@@ -55,6 +54,21 @@ public class Fourteen {
         }
     }
 
+    /**
+     * make string version here
+     */
+    public static void bucketStrings(String input) {
+        Vector<Vector<Integer>> buck = new Vector<>();
+        // input size should be 9 for int and 25 for alphabet
+        Integer n = 25;
+//        System.out.println("input size: " + input.size());
+
+        for (int i = 0; i < n; i++) {
+            //make B[i] an empty list or an empty vector
+            buck.addElement(new Vector<Integer>());
+        }
+    }
+
     public static void main(String[] args) {
         Vector<Integer> myData = new Vector<>();
         Integer vSize = 20;
@@ -63,6 +77,7 @@ public class Fourteen {
             myData.addElement(r.nextInt(99) + 1);
         }
 
+        /* test case */
 //        myData.addElement(8);
 //        myData.addElement(78);
 //        myData.addElement(17);
@@ -75,7 +90,26 @@ public class Fourteen {
 //        myData.addElement(23);
 //        myData.addElement(68);
 
-        System.out.println("ICA 14\n" + myData);
-        bucketSort(myData);
+//        System.out.println("ICA 14\n" + myData);
+//        bucketSort(myData);
+
+        /* String Vector here */
+        Vector<Integer> strData = new Vector<>();
+        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        System.out.println(str);
+        System.out.println(str.length());
+        // append to str using .concat()
+        // ascii values a-z     97-122
+        // ascii values A-Z     65-90
+
+        for (int i = 0; i < 35; i++) {
+            strData.addElement(r.nextInt(26) + 65);
+        }
+
+        str = "";
+        for(int i = 0; i < strData.size(); i++){
+            str = str.concat(Character.toString((char) (int)strData.elementAt(i)));
+        }
+        System.out.println(str + "\nlength: " + str.length());
     }
 }
