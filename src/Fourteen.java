@@ -1,10 +1,12 @@
-import java.util.LinkedList;
 import java.util.Random;
 import java.util.Vector;
 
 /**
  * read page 200-204
  */
+
+//TODO make a string function for bucket sort
+// Sanders said making the string all uppercase was fine
 
 public class Fourteen {
 
@@ -37,7 +39,7 @@ public class Fourteen {
         }
         //TODO concatenate the arrays in order
         // if I really want to return the final sorted array I
-        // could just make another auxiallary array and return that
+        // could just make another auxillary array and return that
     }
 
     public static void insertSort(Vector<Integer> input) {
