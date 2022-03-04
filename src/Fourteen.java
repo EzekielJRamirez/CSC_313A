@@ -5,9 +5,6 @@ import java.util.Vector;
  * read page 200-204
  */
 
-//TODO make a string function for bucket sort
-// Sanders said making the string all uppercase was fine
-
 public class Fourteen {
 
     public static void bucketSort(Vector<Integer> input) {
@@ -57,10 +54,12 @@ public class Fourteen {
     /**
      * make string version here
      */
+    //TODO make a string function for bucket sort
+    // Sanders said making the string all uppercase was fine
     public static void bucketStrings(String input) {
         Vector<Vector<Integer>> buck = new Vector<>();
         // input size should be 9 for int and 25 for alphabet
-        Integer n = 25;
+        Integer n = 26;
 //        System.out.println("input size: " + input.size());
 
         for (int i = 0; i < n; i++) {
@@ -95,19 +94,16 @@ public class Fourteen {
 
         /* String Vector here */
         Vector<Integer> strData = new Vector<>();
-        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        System.out.println(str);
-        System.out.println(str.length());
+//        String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        System.out.println(str);
+//        System.out.println(str.length());
         // append to str using .concat()
         // ascii values a-z     97-122
         // ascii values A-Z     65-90
 
-        for (int i = 0; i < 35; i++) {
+        String str = "";       // reset the string to be empty
+        for(int i = 0; i < 35; i++){
             strData.addElement(r.nextInt(26) + 65);
-        }
-
-        str = "";
-        for(int i = 0; i < strData.size(); i++){
             str = str.concat(Character.toString((char) (int)strData.elementAt(i)));
         }
         System.out.println(str + "\nlength: " + str.length());
